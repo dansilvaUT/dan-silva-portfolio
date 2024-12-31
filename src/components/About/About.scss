@@ -1,0 +1,59 @@
+@use "../../styles/library" as mixins;
+
+.About {
+  &-Container {
+    color: mixins.$white;
+  }
+
+  &-Content {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @include mixins.for-phone-only {
+      flex-direction: column;
+    }
+  }
+
+  &-Text {
+    display: block;
+    width: 45%;
+
+    @include mixins.for-phone-only {
+      width: 100%;
+    }
+  }
+  &-Img {
+    width: 45%;
+
+    object-fit: contain;
+    border-radius: 10%;
+    @include mixins.for-phone-only {
+      width: 90%;
+      margin-bottom: 32px;
+    }
+  }
+
+  &-Icon {
+    font-size: 50px;
+    border: 3px solid mixins.$bice-blue;
+    padding: 12px;
+    background-color: mixins.$white;
+    border-radius: 50%;
+  }
+
+  &-Stack {
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    grid-row-gap: 20px;
+  }
+}
+
+.Variant {
+  flex-direction: column;
+}

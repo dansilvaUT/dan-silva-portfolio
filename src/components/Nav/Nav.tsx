@@ -15,16 +15,15 @@ import "./Nav.scss";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
 
   const linkProps = {
     color: "white",
-    underline: "hover" as "hover" | undefined,
+    underline: isPhone ? "none" : "hover",
     display: "flex",
     alignItems: "center",
     fontSize: 22,
   };
-
-  const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
     <div className="Nav-Container">
@@ -36,18 +35,26 @@ const Nav = () => {
             onClick={() => setMenuOpen(!menuOpen)}
           />
           <MenuList className={`Nav-MobileMenu ${menuOpen ? "open" : ""}`}>
-            <MenuItem>
-              <ListItemText>Home</ListItemText>
-            </MenuItem>
-            <MenuItem>
-              <ListItemText>About</ListItemText>
-            </MenuItem>
-            <MenuItem>
-              <ListItemText>Projects</ListItemText>
-            </MenuItem>
-            <MenuItem>
-              <ListItemText>Contact</ListItemText>
-            </MenuItem>
+            <Link href="/dan-silva-portfolio" {...linkProps}>
+              <MenuItem>
+                <ListItemText>Home</ListItemText>
+              </MenuItem>
+            </Link>
+            <Link href="/dan-silva-portfolio/about" {...linkProps}>
+              <MenuItem>
+                <ListItemText>About</ListItemText>
+              </MenuItem>
+            </Link>
+            <Link href="/dan-silva-portfolio/code" {...linkProps}>
+              <MenuItem>
+                <ListItemText>Projects</ListItemText>
+              </MenuItem>
+            </Link>
+            <Link href="/dan-silva-portfolio/contact" {...linkProps}>
+              <MenuItem>
+                <ListItemText>Contact</ListItemText>
+              </MenuItem>
+            </Link>
           </MenuList>
         </>
       ) : (
