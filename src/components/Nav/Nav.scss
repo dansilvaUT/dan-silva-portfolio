@@ -8,10 +8,30 @@
   }
 
   &-Breadcrumbs {
-    color: red;
+    color: mixins.$white;
   }
 }
 
+.MuiMenuList-root {
+  box-shadow: none;
+}
+
+.Nav-MobileMenu {
+  position: absolute !important;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  left: 0;
+}
+
+.open {
+  opacity: 1;
+  background-color: mixins.$prussian-blue;
+  box-shadow: none;
+  visibility: visible;
+}
+
 .MuiBreadcrumbs-separator {
-  color: mixins.$white !important;
+  color: mixins.$white;
 }

@@ -6,7 +6,6 @@ import MailIcon from "@mui/icons-material/Mail";
 import InfoIcon from "@mui/icons-material/Info";
 import CodeIcon from "@mui/icons-material/Code";
 import MenuIcon from "@mui/icons-material/Menu";
-import Paper from "@mui/material/Paper";
 import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -36,24 +35,20 @@ const Nav = () => {
             fontSize="large"
             onClick={() => setMenuOpen(!menuOpen)}
           />
-          {menuOpen && (
-            <Paper sx={{ width: 320, maxWidth: "100%" }}>
-              <MenuList>
-                <MenuItem>
-                  <ListItemText>Home</ListItemText>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemText>About</ListItemText>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemText>Projects</ListItemText>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemText>Contact</ListItemText>
-                </MenuItem>
-              </MenuList>
-            </Paper>
-          )}
+          <MenuList className={`Nav-MobileMenu ${menuOpen ? "open" : ""}`}>
+            <MenuItem>
+              <ListItemText>Home</ListItemText>
+            </MenuItem>
+            <MenuItem>
+              <ListItemText>About</ListItemText>
+            </MenuItem>
+            <MenuItem>
+              <ListItemText>Projects</ListItemText>
+            </MenuItem>
+            <MenuItem>
+              <ListItemText>Contact</ListItemText>
+            </MenuItem>
+          </MenuList>
         </>
       ) : (
         <Breadcrumbs aria-label="breadcrumb" className="Nav-Breadcrumbs">
