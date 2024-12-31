@@ -16,10 +16,12 @@ import "./Nav.scss";
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
+  const getUnderline = (isPhone: boolean): "none" | "hover" =>
+    isPhone ? "none" : "hover";
 
   const linkProps = {
     color: "white",
-    underline: isPhone ? "none" : "hover",
+    underline: getUnderline(isPhone),
     display: "flex",
     alignItems: "center",
     fontSize: 22,
