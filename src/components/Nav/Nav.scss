@@ -1,0 +1,17 @@
+@use "../../styles/library" as mixins;
+
+.Nav {
+  &-Container {
+    color: mixins.$white;
+    background-color: mixins.$prussian-blue;
+    padding: 10px 15px;
+  }
+
+  &-Breadcrumbs {
+    color: red;
+  }
+}
+
+.MuiBreadcrumbs-separator {
+  color: mixins.$white !important;
+}

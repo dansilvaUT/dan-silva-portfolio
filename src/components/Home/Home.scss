@@ -1,0 +1,32 @@
+@use "../../styles/library" as mixins;
+
+.Home {
+  &-Container {
+    color: mixins.$white;
+  }
+
+  &-Title {
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+
+  &-Content {
+    height: calc(100vh - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-Btn:hover {
+    background-color: mixins.$columbia-blue;
+    border-color: mixins.$columbia-blue;
+    font-weight: 500;
+  }
+}
+
+@include mixins.for-phone-only {
+  .Home-Title {
+    font-size: 36px;
+  }
+}
