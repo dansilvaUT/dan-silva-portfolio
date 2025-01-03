@@ -5,6 +5,9 @@
     color: mixins.$white;
     background-color: mixins.$prussian-blue;
     padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    width: 100%;
   }
 
   &-Breadcrumbs {

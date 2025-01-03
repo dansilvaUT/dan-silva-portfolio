@@ -1,15 +1,18 @@
-import { HashRouter as Router, Routes, Route } from "react-router";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import Nav from "./components/Nav/Nav";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/dan-silva-portfolio" element={<Home />} />
-        <Route path="/dan-silva-portfolio/about" element={<About />} />
-      </Routes>
-    </Router>
+    <>
+      <Nav />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+    </>
   );
 }
 

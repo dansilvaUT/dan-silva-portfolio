@@ -16,3 +16,7 @@ body {
   padding: 0;
   background-color: mixins.$oxford-blue;
 }
+
+html {
+  scroll-behavior: smooth;
+}

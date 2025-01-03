@@ -1,4 +1,3 @@
-import Nav from "../Nav/Nav";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { HomeHeadingText } from "../helpers/CopyHelpers";
@@ -11,8 +10,12 @@ const Home = () => {
   const matches = useMediaQuery("(max-width:767px)");
 
   return (
-    <Container maxWidth={false} disableGutters className="Home-Container">
-      <Nav />
+    <Container
+      maxWidth={false}
+      disableGutters
+      className="Home-Container"
+      id="home"
+    >
       <Container fixed className="Home-Content">
         <Typography
           variant="h2"

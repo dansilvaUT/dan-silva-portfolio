@@ -16,6 +16,7 @@ import "./Nav.scss";
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
+
   const getUnderline = (isPhone: boolean): "none" | "hover" =>
     isPhone ? "none" : "hover";
 
@@ -37,22 +38,38 @@ const Nav = () => {
             onClick={() => setMenuOpen(!menuOpen)}
           />
           <MenuList className={`Nav-MobileMenu ${menuOpen ? "open" : ""}`}>
-            <Link href="/dan-silva-portfolio" {...linkProps}>
+            <Link
+              href="#home"
+              {...linkProps}
+              onClick={() => setMenuOpen(false)}
+            >
               <MenuItem>
                 <ListItemText>Home</ListItemText>
               </MenuItem>
             </Link>
-            <Link href="/dan-silva-portfolio/about" {...linkProps}>
+            <Link
+              href="#about"
+              {...linkProps}
+              onClick={() => setMenuOpen(false)}
+            >
               <MenuItem>
                 <ListItemText>About</ListItemText>
               </MenuItem>
             </Link>
-            <Link href="/dan-silva-portfolio/code" {...linkProps}>
+            <Link
+              href="#code"
+              {...linkProps}
+              onClick={() => setMenuOpen(false)}
+            >
               <MenuItem>
                 <ListItemText>Projects</ListItemText>
               </MenuItem>
             </Link>
-            <Link href="/dan-silva-portfolio/contact" {...linkProps}>
+            <Link
+              href="#contact"
+              {...linkProps}
+              onClick={() => setMenuOpen(false)}
+            >
               <MenuItem>
                 <ListItemText>Contact</ListItemText>
               </MenuItem>
@@ -61,19 +78,19 @@ const Nav = () => {
         </>
       ) : (
         <Breadcrumbs aria-label="breadcrumb" className="Nav-Breadcrumbs">
-          <Link href="/dan-silva-portfolio" {...linkProps}>
+          <Link href="#home" {...linkProps}>
             <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Home
           </Link>
-          <Link href="/dan-silva-portfolio/about" {...linkProps}>
+          <Link href="#about" {...linkProps}>
             <InfoIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             About
           </Link>
-          <Link href="/dan-silva-portfolio/code" {...linkProps}>
+          <Link href="#code" {...linkProps}>
             <CodeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Projects
           </Link>
-          <Link href="/dan-silva-portfolio/contact" {...linkProps}>
+          <Link href="#contact" {...linkProps}>
             <MailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Contact
           </Link>

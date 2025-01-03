@@ -1,0 +1,68 @@
+@use "../../styles/library" as mixins;
+
+.Contact {
+  &-Container {
+    color: mixins.$white;
+    min-height: calc(100vh - 55px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include mixins.for-phone-only {
+      scroll-margin-top: 65px;
+    }
+  }
+
+  &-InputBox {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-Form {
+    min-height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 500px;
+    @include mixins.for-phone-only {
+      min-width: 300px;
+    }
+  }
+
+  &-Btn:hover {
+    font-weight: 800;
+    background-color: rgba(46, 125, 50, 1);
+    color: mixins.$white;
+  }
+}
+
+.Contact-Input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+.Contact-Input:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: mixins.$white;
+}
+
+.Contact-Input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  color: mixins.$white;
+}
+
+.Contact-Input .MuiOutlinedInput-root {
+  color: mixins.$white;
+}
+
+.Contact-Input .MuiOutlinedInput-input {
+  color: mixins.$white;
+}
+
+.Contact-Input .MuiOutlinedInput-notchedOutline {
+  border-color: mixins.$white;
+}
+
+.Contact-Input .MuiInputLabel-root {
+  color: mixins.$white;
+}
+
+.Contact-Input .MuiInputLabel-root.Mui-focused {
+  color: mixins.$white;
+}

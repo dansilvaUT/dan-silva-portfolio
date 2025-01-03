@@ -1,0 +1,12 @@
+@use "../../styles/library" as mixins;
+
+.Projects {
+  &-Container {
+    color: mixins.$white;
+    min-height: calc(100vh - 55px);
+
+    @include mixins.for-phone-only {
+      scroll-margin-top: 65px;
+    }
+  }
+}

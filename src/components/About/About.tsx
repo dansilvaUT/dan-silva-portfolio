@@ -1,4 +1,3 @@
-import Nav from "../Nav/Nav";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import profile from "../../assets/images/profile.jpg";
@@ -8,8 +7,12 @@ import "./About.scss";
 
 const About = () => {
   return (
-    <Container maxWidth={false} disableGutters className="About-Container">
-      <Nav />
+    <Container
+      maxWidth={false}
+      disableGutters
+      className="About-Container"
+      id="about"
+    >
       <Container className="About-Content Variant">
         <Typography variant="h2" align="center">
           Welcome!
