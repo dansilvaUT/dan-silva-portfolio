@@ -9,4 +9,65 @@
       scroll-margin-top: 65px;
     }
   }
+
+  &-Title {
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  &-Title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: mixins.$prussian-blue;
+    transform: translateX(-50%);
+  }
+
+  &-Title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: mixins.$columbia-blue;
+    padding: 0 5px;
+    background: mixins.$oxford-blue;
+    transform: translateX(-50%);
+    content: "recent work";
+    font-weight: 500;
+  }
+
+  &-Content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+
+  &-Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: mixins.$white;
+    border: 3px solid mixins.$columbia-blue;
+    width: 300px;
+    height: 300px;
+    background-color: mixins.$prussian-blue;
+    transition: 0.5s;
+    border-radius: 5px;
+    padding: 5px 40px;
+  }
+
+  &-Card:hover {
+    background-color: mixins.$bice-blue;
+    transform: scale(1.1);
+  }
+
+  &-Icon {
+    font-size: 70px;
+    color: mixins.$white;
+  }
 }

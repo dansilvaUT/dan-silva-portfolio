@@ -3,12 +3,17 @@ $prussian-blue: #003559;
 $white: #fff;
 $black: #000;
 $oxford-blue: #061a40;
-$saphire: #061a40;
 $bice-blue: #006daa;
 $columbia-blue: #b9d6f2;
 
 @mixin for-phone-only {
   @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 900px) {
     @content;
   }
 }
