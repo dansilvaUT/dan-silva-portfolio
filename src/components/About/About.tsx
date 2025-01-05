@@ -3,11 +3,19 @@ import Typography from "@mui/material/Typography";
 import profile from "../../assets/images/profile.jpg";
 import Box from "@mui/material/Box";
 import { useMediaQuery } from "react-responsive";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Link from "@mui/material/Link";
 
 import "./About.scss";
 
 const About = () => {
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const CustomButton = styled(Button)({
+    color: "white",
+    borderColor: "white",
+  });
 
   return (
     <Container
@@ -25,7 +33,7 @@ const About = () => {
           <Box className="About-Text">
             <Typography
               className="About-Copy"
-              fontSize={isPhone ? "18px" : "22px"}
+              fontSize={isPhone ? "18px" : "20px"}
               gutterBottom
             >
               I'm a passionate software engineer with a proven track record of
@@ -35,7 +43,7 @@ const About = () => {
             </Typography>
             <Typography
               className="About-Copy"
-              fontSize={isPhone ? "18px" : "22px"}
+              fontSize={isPhone ? "18px" : "20px"}
               gutterBottom
             >
               Known for a strong work ethic, dependability, and a commitment to
@@ -43,6 +51,19 @@ const About = () => {
               problems or contributing to team success, I bring energy,
               curiosity, and a steadfast dedication to every project.
             </Typography>
+            <Link
+              target="_blank"
+              href="https://docs.google.com/document/d/1zJ9TlTkimPWCPAFuf-Y_cOf-3aRwPR5hxwG6_npWq7c/edit?usp=sharing"
+              rel="noopener noreferrer"
+            >
+              <CustomButton
+                className="About-Btn"
+                variant="outlined"
+                size="large"
+              >
+                Resume
+              </CustomButton>
+            </Link>
           </Box>
         </Container>
         <Container fixed className="About-Content Variant">

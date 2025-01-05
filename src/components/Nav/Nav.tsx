@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
@@ -12,9 +12,11 @@ import ListItemText from "@mui/material/ListItemText";
 import { useMediaQuery } from "react-responsive";
 
 import "./Nav.scss";
+import { Typography } from "@mui/material";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
 
   const getUnderline = (isPhone: boolean): "none" | "hover" =>
@@ -28,8 +30,24 @@ const Nav = () => {
     fontSize: 22,
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="Nav-Container">
+    <div className={`Nav-Container ${scroll ? "Scroll" : ""}`}>
       {isPhone ? (
         <>
           <MenuIcon
@@ -77,24 +95,31 @@ const Nav = () => {
           </MenuList>
         </>
       ) : (
-        <Breadcrumbs aria-label="breadcrumb" className="Nav-Breadcrumbs">
-          <Link href="#home" {...linkProps}>
-            <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Home
+        <>
+          <Link href="#home" {...linkProps} className="Nav-Link">
+            <Typography variant="h5" align="center" className="Nav-Title">
+              Dan Silva Portfolio
+            </Typography>
           </Link>
-          <Link href="#about" {...linkProps}>
-            <InfoIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            About
-          </Link>
-          <Link href="#code" {...linkProps}>
-            <CodeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Projects
-          </Link>
-          <Link href="#contact" {...linkProps}>
-            <MailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Contact
-          </Link>
-        </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" className="Nav-Breadcrumbs">
+            <Link href="#home" {...linkProps} className="Nav-Link">
+              <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              Home
+            </Link>
+            <Link href="#about" {...linkProps} className="Nav-Link">
+              <InfoIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              About
+            </Link>
+            <Link href="#code" {...linkProps} className="Nav-Link">
+              <CodeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              Projects
+            </Link>
+            <Link href="#contact" {...linkProps} className="Nav-Link">
+              <MailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              Contact
+            </Link>
+          </Breadcrumbs>
+        </>
       )}
     </div>
   );

@@ -12,6 +12,12 @@ $columbia-blue: #b9d6f2;
   }
 }
 
+@mixin for-tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 @mixin for-desktop-up {
   @media (min-width: 900px) {
     @content;

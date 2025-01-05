@@ -4,15 +4,30 @@
   &-Container {
     z-index: 1000;
     color: mixins.$white;
-    background-color: mixins.$prussian-blue;
-    padding: 10px 15px;
+    background-color: mixins.$oxford-blue;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
+    transition: all 0.3s ease;
+
+    @include mixins.for-tablet-up {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &-Breadcrumbs {
     color: mixins.$white;
   }
+
+  &-Link:hover {
+    color: mixins.$columbia-blue !important;
+  }
+}
+
+.Scroll {
+  background-color: mixins.$prussian-blue;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .MuiMenuList-root {

@@ -3,15 +3,14 @@
 .Contact {
   &-Container {
     color: mixins.$white;
-    min-height: calc(100vh - 55px);
+    min-height: calc(100vh - 550px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    @include mixins.for-phone-only {
-      scroll-margin-top: 65px;
-    }
+    margin-top: 30px;
+    scroll-margin-top: 65px;
+    background-color: mixins.$bice-blue;
   }
 
   &-InputBox {
@@ -35,6 +34,18 @@
     font-weight: 800;
     background-color: rgba(46, 125, 50, 1);
     color: mixins.$white;
+  }
+
+  &-Icon {
+    font-size: 40px;
+  }
+
+  &-Icon:hover {
+    font-size: 42px;
+  }
+
+  &-MIcon:hover {
+    transform: scale(1.1);
   }
 }
 

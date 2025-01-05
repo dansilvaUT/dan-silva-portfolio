@@ -2,9 +2,15 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import styled from "@mui/material/styles/styled";
 import "./Projects.scss";
 
 const Projects = () => {
+  const CustomButton = styled(Button)({
+    color: "white",
+    borderColor: "white",
+  });
+
   const handleClick = () => {
     window.open(
       "https://github.com/dansilvaUT",
@@ -25,12 +31,13 @@ const Projects = () => {
       <Box className="Projects-Content">
         <div className="Projects-Card">
           <Typography>
-            I use GitHub to keep track of my projects repositories.
+            Checkout my GitHub profile to see what I'm working on and what
+            languages, I use the most.
           </Typography>
           <i className="Projects-Icon devicon-github-original-wordmark"></i>
-          <Button color="secondary" onClick={handleClick}>
+          <CustomButton color="secondary" onClick={handleClick}>
             View GitHub
-          </Button>
+          </CustomButton>
         </div>
       </Box>
     </Container>

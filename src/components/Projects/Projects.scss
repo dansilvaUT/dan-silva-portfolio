@@ -4,10 +4,8 @@
   &-Container {
     color: mixins.$white;
     min-height: calc(100vh - 55px);
-
-    @include mixins.for-phone-only {
-      scroll-margin-top: 65px;
-    }
+    margin-top: 30px;
+    scroll-margin-top: 65px;
   }
 
   &-Title {
@@ -22,7 +20,7 @@
     left: 50%;
     width: 180px;
     height: 3px;
-    background: mixins.$prussian-blue;
+    background: mixins.$white;
     transform: translateX(-50%);
   }
 

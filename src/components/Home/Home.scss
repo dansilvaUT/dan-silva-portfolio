@@ -20,9 +20,10 @@
   }
 
   &-Btn:hover {
-    background-color: mixins.$columbia-blue;
-    border-color: mixins.$columbia-blue;
+    background-color: mixins.$prussian-blue;
+    border-color: mixins.$prussian-blue;
     font-weight: 500;
+    color: mixins.$white;
   }
 }
 
