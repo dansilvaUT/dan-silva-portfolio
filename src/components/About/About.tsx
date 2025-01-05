@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { useMediaQuery } from "react-responsive";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { createLink } from "../../utils/app.utils";
+import { createLink, languages } from "../../utils/app.utils";
 
 import "./About.scss";
 
@@ -16,6 +16,12 @@ const About = () => {
     color: "white",
     borderColor: "white",
   });
+
+  const renderIcons = (languages: string[]) => {
+    return languages.map((lang) => (
+      <i key={lang} className={`About-Icon devicon-${lang}-plain colored`}></i>
+    ));
+  };
 
   return (
     <Container
@@ -68,15 +74,7 @@ const About = () => {
         <Container fixed className="About-Content Variant">
           <Typography variant="h4">Stack</Typography>
           <Box component={"section"} className="About-Stack">
-            <i className="About-Icon devicon-nodejs-plain-wordmark colored"></i>
-            <i className="About-Icon devicon-html5-plain colored"></i>
-            <i className="About-Icon devicon-sass-plain colored"></i>
-            <i className="About-Icon devicon-javascript-plain colored"></i>
-            <i className="About-Icon devicon-svelte-plain colored"></i>
-            <i className="About-Icon devicon-postgresql-plain colored"></i>
-            <i className="About-Icon devicon-typescript-plain colored"></i>
-            <i className="About-Icon devicon-ruby-plain colored"></i>
-            <i className="About-Icon devicon-mysql-original colored"></i>
+            {renderIcons(languages)}
           </Box>
         </Container>
       </Container>
