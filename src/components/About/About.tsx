@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import { useMediaQuery } from "react-responsive";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import Link from "@mui/material/Link";
+import { createLink } from "../../utils/app.utils";
 
 import "./About.scss";
 
@@ -51,19 +51,18 @@ const About = () => {
               problems or contributing to team success, I bring energy,
               curiosity, and a steadfast dedication to every project.
             </Typography>
-            <Link
-              target="_blank"
-              href="https://docs.google.com/document/d/1zJ9TlTkimPWCPAFuf-Y_cOf-3aRwPR5hxwG6_npWq7c/edit?usp=sharing"
-              rel="noopener noreferrer"
+            <CustomButton
+              className="About-Btn"
+              variant="outlined"
+              size="large"
+              onClick={() =>
+                createLink(
+                  "https://docs.google.com/document/d/1zJ9TlTkimPWCPAFuf-Y_cOf-3aRwPR5hxwG6_npWq7c/edit?usp=sharing"
+                )
+              }
             >
-              <CustomButton
-                className="About-Btn"
-                variant="outlined"
-                size="large"
-              >
-                Resume
-              </CustomButton>
-            </Link>
+              Resume
+            </CustomButton>
           </Box>
         </Container>
         <Container fixed className="About-Content Variant">

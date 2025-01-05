@@ -12,6 +12,7 @@ import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
+import { createLink } from "../../utils/app.utils";
 import "./Contact.scss";
 
 const Contact = () => {
@@ -19,8 +20,10 @@ const Contact = () => {
     backgroundColor: "#fff",
     ...theme.typography.body2,
     padding: theme.spacing(1),
+    fontSize: "18px",
     textAlign: "center",
     boxShadow: "none",
+    transition: ".5",
     color: "#fff",
     cursor: "pointer",
     ...theme.applyStyles("light", {
@@ -44,14 +47,19 @@ const Contact = () => {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item>
+        <Item
+          className="Contact-Item"
+          onClick={() => createLink("https://www.linkedin.com/in/danmsilva/")}
+        >
           <i className="Contact-Icon devicon-linkedin-plain"></i>
         </Item>
-        <Item>
+        <Item className="Contact-Item">
           <AlternateEmailIcon className="Contact-MIcon" fontSize="large" />
+          dan13silv@gmail.com
         </Item>
-        <Item>
+        <Item className="Contact-Item">
           <PhoneIphoneIcon className="Contact-MIcon" fontSize="large" />
+          801-577-3656
         </Item>
       </Stack>
       {/* Commenting out for now until nodemailer is set up. */}

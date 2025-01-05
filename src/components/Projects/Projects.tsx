@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import styled from "@mui/material/styles/styled";
+import { createLink } from "../../utils/app.utils";
 import "./Projects.scss";
 
 const Projects = () => {
@@ -11,13 +12,6 @@ const Projects = () => {
     borderColor: "white",
   });
 
-  const handleClick = () => {
-    window.open(
-      "https://github.com/dansilvaUT",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
   return (
     <Container
       maxWidth={false}
@@ -35,7 +29,10 @@ const Projects = () => {
             languages, I use the most.
           </Typography>
           <i className="Projects-Icon devicon-github-original-wordmark"></i>
-          <CustomButton color="secondary" onClick={handleClick}>
+          <CustomButton
+            color="secondary"
+            onClick={() => createLink("https://github.com/dansilvaUT")}
+          >
             View GitHub
           </CustomButton>
         </div>

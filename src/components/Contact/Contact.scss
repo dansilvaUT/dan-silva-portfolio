@@ -11,6 +11,7 @@
     margin-top: 30px;
     scroll-margin-top: 65px;
     background-color: mixins.$bice-blue;
+    padding: 20px 0px;
   }
 
   &-InputBox {
@@ -40,12 +41,14 @@
     font-size: 40px;
   }
 
-  &-Icon:hover {
-    font-size: 42px;
+  &-Item {
+    display: flex;
+    align-items: center;
   }
 
-  &-MIcon:hover {
-    transform: scale(1.1);
+  &-Icon:hover,
+  &-Item:hover {
+    color: mixins.$prussian-blue;
   }
 }
 
