@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { HomeHeadingText } from "../helpers/CopyHelpers";
 import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import Link from "@mui/material/Link";
 import "./Home.scss";
 
 const Home = () => {
@@ -26,9 +26,11 @@ const Home = () => {
           Dan Silva | Software Engineer
         </Typography>
         <HomeHeadingText />
-        <Button variant="outlined" className="Home-Btn" size="large">
-          Hire Me
-        </Button>
+        <Link href="#contact">
+          <Button variant="outlined" className="Home-Btn" size="large">
+            Hire Me
+          </Button>
+        </Link>
       </Container>
     </Container>
   );
