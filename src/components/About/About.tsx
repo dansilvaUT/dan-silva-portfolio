@@ -63,7 +63,7 @@ const About = () => {
               size="large"
               onClick={() =>
                 createLink(
-                  "https://docs.google.com/document/d/1zJ9TlTkimPWCPAFuf-Y_cOf-3aRwPR5hxwG6_npWq7c/edit?usp=sharing"
+                  "https://docs.google.com/document/d/19Te-SD26jTDu23hWAZTAeXqriG---Sl4Uppl6f9wBrU/edit?usp=sharing"
                 )
               }
             >
